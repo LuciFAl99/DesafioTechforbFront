@@ -17,8 +17,14 @@ export class BalanceComponent {
       align: 'left'
     },
     xAxis: {
-      categories: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
+      categories: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie'], // Abreviaciones de días
       crosshair: true,
+      labels: {
+        style: {
+          fontSize: '12px', // Tamaño de fuente
+          whiteSpace: 'nowrap' // Evitar el salto de línea para textos largos
+        }
+      }
     },
     yAxis: {
       min: 0,
@@ -54,5 +60,6 @@ export class BalanceComponent {
     ]
   };
   };
+
 
 

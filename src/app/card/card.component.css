@@ -3,31 +3,33 @@
   border-radius: 25px;
   padding: 20px;
   margin: 20px;
-  width: 250px;
-  height: 150px;
+  width: 320px;
+  height: 200px;
   text-align: center;
   color: white;
   background-image: url(./img/card.png);
-  background-position: -100px 0px;
+  background-position: -30px 0px;
+
 }
 .card2{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 25px;
   padding: 20px;
   margin: 20px;
-  width: 250px;
-  height: 150px;
+  width: 320px;
+  height: 200px;
   text-align: center;
   color: white;
   background-image: url(./img/card2.png);
+  background-size: cover;
 }
 .card3{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 25px;
   padding: 20px;
   margin: 20px;
-  width: 250px;
-  height: 150px;
+  width: 320px;
+  height: 200px;
   text-align: center;
   color: white;
   background-image: url(./img/card3.png);

@@ -1,0 +1,21 @@
+.table-rounded {
+  border-radius: 15px;
+  overflow: hidden;
+}
+.table-rounded thead tr:first-child {
+  background-color: white;
+}
+.table-rounded thead tr:nth-child(2) {
+  background-color: white;
+}
+th{
+  padding-top: 30px;
+  padding-bottom: 30px
+}
+.name{
+  padding-left: 10px;
+}
+.name2{
+  padding-left: 10px;
+  background-color: white;
+}

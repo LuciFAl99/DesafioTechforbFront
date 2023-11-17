@@ -1,0 +1,25 @@
+<div class="container">
+    <table class="table table-rounded">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Monto total</th>
+          <th>Cuotas</th>
+          <th>Fecha de emisión</th>
+          <th>Mensual</th>
+          <th>Tasa interés</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data" [class.selected-row]="item.selected">
+          <td><input type="checkbox" [checked]="item.selected" (change)="item.selected = !item.selected"></td>
+          <td>{{ item.amount }}</td>
+          <td>{{ item.installments }}</td>
+          <td>{{ item.issueDate }}</td>
+          <td>{{ item.monthly }}</td>
+          <td><button class="btn" [ngClass]="item.status === 'Pagar' ? 'btn-success' : 'btn-danger'">{{ item.status }}</button></td>
+        </tr>
+      </tbody>            
+    </table>
+  </div>
+  
