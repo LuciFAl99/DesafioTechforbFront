@@ -29,4 +29,12 @@
   .selected-row {
     background-color: #f5f5f583; 
   }
+  .btn-pagar{
+    background-color: rgb(151, 51, 218);
+    width: 50%;
+  }
+  .btn-cancelado{
+    background-color: rgb(165, 105, 204);
+    width: 50%;
+  }
   

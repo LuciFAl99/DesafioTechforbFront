@@ -17,12 +17,12 @@ export class BalanceComponent {
       align: 'left'
     },
     xAxis: {
-      categories: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie'], // Abreviaciones de días
+      categories: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie'], 
       crosshair: true,
       labels: {
         style: {
-          fontSize: '12px', // Tamaño de fuente
-          whiteSpace: 'nowrap' // Evitar el salto de línea para textos largos
+          fontSize: '12px', 
+          whiteSpace: 'nowrap'
         }
       }
     },
