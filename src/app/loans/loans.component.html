@@ -1,4 +1,5 @@
 <div class="container">
+  <div class="table-responsive">
     <table class="table table-rounded">
       <thead>
         <tr>
@@ -17,9 +18,10 @@
           <td>{{ item.installments }}</td>
           <td>{{ item.issueDate }}</td>
           <td>{{ item.monthly }}</td>
-          <td><button class="btn" [ngClass]="item.status === 'Pagar' ? 'btn-pagar' : 'btn-cancelado'">{{ item.status }}</button></td>
+          <td><button class="btn" [ngClass]="item.status === 'Pagar' ? 'btn-pagar' : 'btn-cancelado'">{{ item.status
+              }}</button></td>
         </tr>
-      </tbody>            
+      </tbody>
     </table>
   </div>
-  
+</div>

@@ -9,7 +9,7 @@
   color: white;
   background-image: url(./img/card.png);
   background-position: -30px 0px;
-
+  background-size: cover;
 }
 .card2{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -34,6 +34,7 @@
   color: white;
   background-image: url(./img/card3.png);
   background-position: 0px 3px;
+  background-size: cover;
 }
 .cards{
   display: flex;
@@ -84,6 +85,36 @@ background-color: white;
 .bold{
   color: black;
   font-weight: bold;
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+  .contenedor{
+    display: flex;
+    flex-direction: column;
+  }
+  h2{
+    text-align: center;
+  }
+  input{
+    display: none;
+  }
+  span{
+    display: none;
+  }
+  .circulo{
+    display: none;
+  }
+  .bold{
+    display: none !important;
+  }
+  .card{
+    background-position: 240px 0px;
+    background-size: cover;
+  }
+}
+@media (max-width:1020px){
+  .no-mostrar{
+    display: none;
+  }
 }
 
 

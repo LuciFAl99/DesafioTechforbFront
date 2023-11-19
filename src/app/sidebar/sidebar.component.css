@@ -44,8 +44,47 @@ i {
   padding-left: 10px;
   margin-right: 11px;
 }
+.circulo {
+  width: 40px;
+  height: 40px;  
+  border-radius: 50%;
+  border: 1px solid rgb(116, 113, 113); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #918888;
+}
+button{
+  padding-left: 5%;
+  padding-bottom: 6%;
+}
+button:hover{
+  background-color: white;
+  }
 .home{
   margin-left: 10px;
 }
-
-
+.burger-menu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.burger-menu a{
+  width: 10%;
+  background-color: #f1f1f1;
+  margin-top: 1px;
+  font-weight: bold;
+}
+.burger-menu a:hover{
+  color: black;
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+  .sidebar{
+    display: none;
+  }
+}
+@media (min-width:1020px){
+nav{
+  display: none;
+}
+}
