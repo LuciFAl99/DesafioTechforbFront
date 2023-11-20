@@ -9,6 +9,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { LoansComponent } from './loans/loans.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { FormsModule } from '@angular/forms';
     BalanceComponent,
     TransactionsComponent,
     LoansComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HighchartsChartModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]
