@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { LoginServiceService } from '../Service/login.service';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-login',
@@ -6,5 +10,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  dni: string = '';
+  password: string = '';
 
+  constructor(
+    private loginService: LoginServiceService,
+    private router: Router){}
+
+
+  onSubmit() {
+    this.loginService.login(this.dni, this.password).subscribe(
+      (response) => {
+        console.log('Inicio de sesión exitoso');
+        this.router.navigate(['/']);
+      },
+      (error) => {
+        console.log('Error de inicio de sesión', error);
+      }
+    );
+  }
 }
