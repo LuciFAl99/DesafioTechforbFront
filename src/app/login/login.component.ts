@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -19,10 +20,11 @@ export class LoginComponent {
 
 
   onSubmit() {
-    this.loginService.login(this.dni, this.password).subscribe(
+    this.loginService.login(this.dni, this.password ).subscribe(
       (response) => {
         console.log('Inicio de sesión exitoso');
-        this.router.navigate(['/']);
+        console.log('Redirigiendo a /home...');
+        this.router.navigate(['/home']);
       },
       (error) => {
         console.log('Error de inicio de sesión', error);

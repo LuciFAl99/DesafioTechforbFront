@@ -11,6 +11,8 @@ import { LoansComponent } from './loans/loans.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { LoginComponent } from './login/login.component';
     TransactionsComponent,
     LoansComponent,
     LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     HttpClientModule, 
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
