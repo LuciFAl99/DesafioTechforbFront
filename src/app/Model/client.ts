@@ -4,10 +4,10 @@ import { DniType } from "./dni-type";
 
 export class Client {
     id?: number;
-    name?: String;
-    lastname?: String;
+    firstName?: String;
+    lastName?: String;
     dniType?: DniType;
     dni?: String;
-    clientLoans?: ClientLoan[];
+    loans?: ClientLoan[];
     cards?: Card[];
 }

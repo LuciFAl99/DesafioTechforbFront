@@ -12,16 +12,52 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of data" [class.selected-row]="item.selected">
-          <td><input type="checkbox" [checked]="item.selected" (change)="item.selected = !item.selected"></td>
-          <td>{{ item.amount }}</td>
-          <td>{{ item.installments }}</td>
-          <td>{{ item.issueDate }}</td>
-          <td>{{ item.monthly }}</td>
-          <td><button class="btn" [ngClass]="item.status === 'Pagar' ? 'btn-pagar' : 'btn-cancelado'">{{ item.status
-              }}</button></td>
-        </tr>
+        <ng-container *ngFor="let loan of client.loans; let i = index">
+          <tr>
+            <td><input type="checkbox" (change)="onCheckboxChange($event, loan)"></td>
+            <td><strong>{{loan.finalAmount}}</strong></td>
+            <td><strong>Cuota {{loan.payments}} - {{loan.originalPayments}}</strong></td>
+            <td>{{ loan.date | date:'MMMM dd, yyyy' }}</td>
+            <td><strong>${{ loan.monthly}}</strong></td>
+            <td>{{loan.interest}}</td>
+            <td>
+              <div *ngIf="idLoan === loan.id && loan.payments === 0">
+                <span class="badge badge-success pagado">Pagado</span>
+              </div>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#paymentModal" *ngIf="idLoan === loan.id && loan.payments !== 0">Pagar</button>
+                          </td>
+          </tr>
+        </ng-container>
       </tbody>
     </table>
+  </div>
+</div>
+<div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="paymentModalLabel">Realizar pago</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (submit)="onPaymentSubmit()">
+          <input type="hidden" [(ngModel)]="idLoan" name="idLoan">
+          <div class="form-group">
+            <label for="card">Seleccionar tarjeta:</label>
+            <select class="form-control" id="card" [(ngModel)]="card" name="card">
+              <option *ngFor="let card of client.cards" [value]="card.number">{{ card.number }}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="amount">Monto a pagar:</label>
+            <input type="number" class="form-control" id="amount" [(ngModel)]="amount" name="amount">
+          </div>
+          <button type="submit" class="btn btn-primary">Realizar pago</button>
+        </form>
+        
+      </div>
+    </div>
   </div>
 </div>

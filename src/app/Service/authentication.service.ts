@@ -1,4 +1,4 @@
-import { inject } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginServiceService } from './login.service';
 
