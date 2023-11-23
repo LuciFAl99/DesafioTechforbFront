@@ -7,12 +7,14 @@ import { CardComponent } from './card/card.component';
 import { BalanceComponent } from './balance/balance.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { TransactionsComponent } from './transactions/transactions.component';
-import { LoansComponent } from './loans/loans.component';
+import { LoansComponent } from './loanInformation-Pay/loans.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CookieService } from 'ngx-cookie-service';
+import { OperationsComponent } from './operations/operations.component';
+import { LoanComponent } from './addLoan/loan.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { CookieService } from 'ngx-cookie-service';
     LoansComponent,
     LoginComponent,
     HomeComponent,
+    OperationsComponent,
+    LoanComponent,
   ],
   imports: [
     BrowserModule,

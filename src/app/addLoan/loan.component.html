@@ -1,0 +1,36 @@
+<div class="container loans">
+    <form (ngSubmit)="onSubmit()" #loanForm="ngForm">
+        <div class="form-group">
+            <label for="loanSelection">Seleccionar préstamo:</label>
+            <select class="form-control" id="loanSelection" name="loanSelection" [(ngModel)]="selectedLoan"
+                (change)="loadPayments()" required>
+                <option *ngFor="let loan of loans" [ngValue]="loan">{{ loan.name }}</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="amount">Monto:</label>
+            <input type="number" class="form-control" id="amount" name="amount" [(ngModel)]="amount" required>
+        </div>
+
+        <div class="form-group" *ngIf="filteredPayments.length > 0">
+            <label for="payments">Número de cuotas:</label>
+            <select class="form-control" id="payments" name="payments" [(ngModel)]="selectedPayment" required>
+                <option *ngFor="let payment of filteredPayments" [ngValue]="payment">
+                    {{ payment }}
+                </option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="destinationCardNumber">Número de tarjeta de destino:</label>
+            <select class="form-control" id="destinationCardNumber" name="destinationCardNumber"
+                [(ngModel)]="destinationCardNumber" required>
+                <option *ngFor="let card of client?.cards"  [value]="card.number">{{ card.number }}</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Solicitar préstamo</button>
+    </form>
+</div>

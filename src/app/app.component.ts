@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { LoginServiceService } from './Service/login.service';
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 
 @Component({
@@ -7,7 +7,7 @@ import { LoginServiceService } from './Service/login.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent{
   title = 'DesafioTechforb';
 
 }

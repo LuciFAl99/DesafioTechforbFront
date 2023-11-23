@@ -1,3 +1,6 @@
+/* styles.css (o styles.scss) */
+@import url('https://cdn.jsdelivr.net/npm/sweetalert2@11/sweetalert2.min.css');
+
 .table-rounded {
     border-radius: 15px;
     overflow: hidden;
@@ -40,8 +43,8 @@
     background-color: rgb(165, 105, 204);
     width: 50%;
   }
-  @media only screen and (min-width:320px) and (max-width:768px){
-
+  .monthly{
+    background-color: rgb(116, 204, 116);
+    text-align: center;
   }
-
   

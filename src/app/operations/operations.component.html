@@ -1,0 +1,25 @@
+<h2>Realizar Transferencia</h2>
+<div class="container transaction">
+    <form (ngSubmit)="onSubmit()" #transactionForm="ngForm">
+        <div class="form-group">
+          <label for="amount">Monto:</label>
+          <input type="number" class="form-control" id="amount" name="amount" required [(ngModel)]="amount">
+        </div>
+        <div class="form-group">
+          <label for="description">Descripción:</label>
+          <input type="text" class="form-control" id="description" name="description" required [(ngModel)]="description">
+        </div>
+        <div class="form-group">
+          <label for="cardOriginNumber">Número de tarjeta de origen:</label>
+          <input type="text" class="form-control" id="cardOriginNumber" name="cardOriginNumber" required [(ngModel)]="cardOriginNumber">
+        </div>
+        <div class="form-group">
+          <label for="destinationCardNumber">Número de tarjeta de destino:</label>
+          <input type="text" class="form-control" id="destinationCardNumber" name="destinationCardNumber" required [(ngModel)]="destinationCardNumber">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Realizar Pago</button>
+      </form>
+</div>
+          
+   
+  

@@ -15,10 +15,27 @@
         <ng-container *ngFor="let loan of client.loans; let i = index">
           <tr>
             <td><input type="checkbox" (change)="onCheckboxChange($event, loan)"></td>
-            <td><strong>{{loan.finalAmount}}</strong></td>
+            <td>
+              <strong>
+                {{ (loan && loan.amount !== undefined && loan.interest !== undefined) ? 
+                   (loan.amount * loan.interest).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+                   : 'N/A' }}
+              </strong>
+            </td>
+            
+            
             <td><strong>Cuota {{loan.payments}} - {{loan.originalPayments}}</strong></td>
             <td>{{ loan.date | date:'MMMM dd, yyyy' }}</td>
-            <td><strong>${{ loan.monthly}}</strong></td>
+            <td>
+              <strong>
+                {{
+                  (loan && loan.amount !== undefined && loan.interest !== undefined && loan.originalPayments !== undefined && loan.originalPayments !== 0) ?
+                    ((loan.amount * loan.interest) / loan.originalPayments).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+                    : 'N/A'
+                }}
+              </strong>
+            </td>
+            
             <td>{{loan.interest}}</td>
             <td>
               <div *ngIf="idLoan === loan.id && loan.payments === 0">
@@ -51,7 +68,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="amount">Monto a pagar:</label>
+            <label for="amount">Monto a pagar: <p class="monthly">${{selectedLoanAmount}}</p></label>
             <input type="number" class="form-control" id="amount" [(ngModel)]="amount" name="amount">
           </div>
           <button type="submit" class="btn btn-primary">Realizar pago</button>

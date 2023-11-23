@@ -1,0 +1,17 @@
+form{
+    width: 50%;
+    margin-top: 5%;
+
+}
+.transaction{
+    display: flex;
+    justify-content: center;
+}
+h2{
+    text-align: center;
+    padding-top: 2%;
+}
+button{
+    margin-top: 2%;
+    margin-left: 35%;
+}
