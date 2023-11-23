@@ -36,7 +36,18 @@ export class LoanComponent implements OnInit {
         console.error(error);
       }
     );
+
+    this.clientService.getCurrentClient().subscribe(
+      (data: Client) => {
+        this.client = data;
+        console.log(this.client);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
+
   onSubmit(): void {
     Swal.fire({
       title: '¿Estás seguro de solicitar el préstamo?',
@@ -49,9 +60,9 @@ export class LoanComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         const loanApplicationDto = {
-          loanId: this.loanId,
+          loanId: this.selectedLoan?.id,
           amount: this.amount,
-          payments: this.payments,
+          payments: this.selectedPayment,
           destinationCardNumber: this.destinationCardNumber
         };
 
@@ -72,12 +83,24 @@ export class LoanComponent implements OnInit {
               this.fetchAndUpdateClientAndNavigate();
             });
           }, (error: HttpErrorResponse) => {
-            console.error('Error al enviar la solicitud de préstamo', error);
-            Swal.fire({
-              icon: 'error',
-              text: error.error.message || 'Ha ocurrido un error al solicitar el préstamo',
-              confirmButtonColor: '#7c601893'
-            });
+            console.error('Error en la transacción:', error);
+
+            if (error.status === 201 && error.statusText === 'OK') {
+              Swal.fire({
+                icon: 'success',
+                text: 'Solicitud realizada con éxito',
+                showConfirmButton: false,
+                timer: 2000
+              }).then(() => {
+                this.fetchAndUpdateClientAndNavigate();
+              });
+            } else {
+              Swal.fire({
+                icon: 'error',
+                text: error.error.message || 'Ha ocurrido un error al solicitar el préstamo',
+                confirmButtonColor: '#7c601893'
+              });
+            }
           });
       }
     });

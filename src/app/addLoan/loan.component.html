@@ -1,8 +1,8 @@
 <div class="container loans">
     <form (ngSubmit)="onSubmit()" #loanForm="ngForm">
         <div class="form-group">
-            <label for="loanSelection">Seleccionar préstamo:</label>
-            <select class="form-control" id="loanSelection" name="loanSelection" [(ngModel)]="selectedLoan"
+            <label for="selectedLoan">Seleccionar préstamo:</label>
+            <select class="form-control" id="selectedLoan" name="selectedLoan" [(ngModel)]="selectedLoan"
                 (change)="loadPayments()" required>
                 <option *ngFor="let loan of loans" [ngValue]="loan">{{ loan.name }}</option>
             </select>
@@ -17,11 +17,16 @@
         <div class="form-group" *ngIf="filteredPayments.length > 0">
             <label for="payments">Número de cuotas:</label>
             <select class="form-control" id="payments" name="payments" [(ngModel)]="selectedPayment" required>
-                <option *ngFor="let payment of filteredPayments" [ngValue]="payment">
-                    {{ payment }}
-                </option>
+                <ng-container *ngFor="let loan of loans">
+                    <ng-container *ngIf="loan.id === selectedLoan?.id">
+                        <option *ngFor="let payment of loan.payments" [ngValue]="payment">
+                            {{ payment }}
+                        </option>
+                    </ng-container>
+                </ng-container>
             </select>
         </div>
+        
 
         <div class="form-group">
             <label for="destinationCardNumber">Número de tarjeta de destino:</label>
