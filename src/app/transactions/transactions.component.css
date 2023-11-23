@@ -19,6 +19,10 @@ th{
   padding-left: 10px;
   background-color: white;
 }
+td{
+  font-weight: bold;
+  font-size: small;
+}
 @media only screen and (min-width:320px) and (max-width:768px){
  table{
   margin-top: 150px;

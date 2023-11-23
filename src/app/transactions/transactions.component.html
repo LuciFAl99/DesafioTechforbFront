@@ -1,6 +1,6 @@
 <div class="container tabla">
   <div class="table-responsive">
-    <table class="table table-striped table-rounded">
+    <table class="table table-striped table-rounded" *ngFor="let card of client.cards">
       <thead>
         <tr>
           <th>Últimas transacciones</th>
@@ -10,31 +10,26 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let transaction of card.transactions">
           <td class="d-flex">
             <span
-              style="background-color: rgb(72, 221, 72); padding: 10px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;">
-              <i class="fas fa-arrow-down" style="transform: rotate(45deg); margin: 0; padding: 0;"></i>
-            </span>
-            <p class="name">Karen Hope</p>
-          </td>
-          <td>$50,034</td>
-          <td>28 Ene, 2023</td>
-          <td>Completado</td>
-        </tr>
-        <tr>
-          <td class="d-flex">
-            <span
-              style="background-color: red; padding: 10px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;">
-              <i class="fas fa-arrow-up" style="transform: rotate(45deg); margin: 0; padding: 0;"></i>
-            </span>
-            <p class="name2">Lucila Alochis</p>
-          </td>
-          <td>$50,034</td>
-          <td>28 Ene, 2023</td>
-          <td>Completado</td>
-        </tr>
+              [ngStyle]="{
+                'background-color': transaction.transactionType === 'DEBITO' ? 'red' : 'green',
+                'padding': '10px',
+                'border-radius': '50%',
+                'display': 'inline-flex',
+                'align-items': 'center',
+                'justify-content': 'center'
+              }">
+            <i class="fas fa-arrow-down" [style.backgroundColor]="transaction.transactionType === 'DEBITO' ? 'red' : 'green'" [style.color]="'white'" [style.transform]="transaction.transactionType === 'DEBITO' ? 'rotate(225deg)' : 'rotate(45deg)'"></i>
 
+            </span>
+            <p class="name">{{transaction.description}}</p>
+          </td>
+          <td>${{transaction.amount}}</td>
+          <td>{{ transaction.date | date:'MMMM dd, yyyy' }}</td>
+          <td [ngStyle]="{'color': transaction.transactionState === 'CONFIRMED' ? 'green' : (transaction.transactionState === 'CANCELED' ? 'red' : 'grey')}">{{transaction.transactionState?.toLowerCase()}}</td>
+        </tr>
       </tbody>
     </table>
   </div>
