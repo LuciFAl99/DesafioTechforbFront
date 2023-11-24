@@ -78,6 +78,13 @@ button:hover{
 .burger-menu a:hover{
   color: black;
 }
+.unicomer {
+  color: rgb(48, 0, 124);
+  font-weight: bold;
+  text-align: center;
+  padding-left: 15%;
+}
+
 @media only screen and (min-width:320px) and (max-width:768px){
   .sidebar{
     display: none;
