@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginServiceService } from '../Service/login.service';
 import { Router } from '@angular/router';
+import { DniType } from '../Model/dni-type';
 
 
 
@@ -13,6 +14,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   dni: string = '';
   password: string = '';
+  dniTypes = Object.values(DniType);
 
   constructor(
     private loginService: LoginServiceService,

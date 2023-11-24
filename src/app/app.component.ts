@@ -16,7 +16,7 @@ export class AppComponent{
 
   ngOnInit() {
     this.router.events.subscribe(() => {
-      this.showSidebar = !this.router.url.includes('login'); 
+      this.showSidebar = !this.router.url.includes('login') && !this.router.url.includes('register'); 
     });
   }
 }

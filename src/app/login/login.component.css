@@ -1,0 +1,82 @@
+.welcome {
+    background-color: transparent;
+}
+
+.welcomeTo {
+    color: gray;
+}
+
+.unicomer {
+    color: rgb(48, 0, 124);
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.card-body form {
+    border: none;
+}
+.custom-form-group {
+    margin-bottom: 1rem;
+}
+input {
+    border: none; 
+    border-bottom: 1px solid #ced4da;
+    outline: none; 
+    border-radius: 0; 
+}
+.fondo{
+    background-color: rgb(48, 0, 124);
+}
+.welcome2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-body {
+    background-color: rgb(48, 0, 124);
+}
+form{
+    background-color: rgb(48, 0, 124);
+    margin-bottom: 90%;
+}
+.form-group{
+    background-color: rgb(48, 0, 124);
+}
+input{
+    background-color: rgb(48, 0, 124);
+}
+label{
+    background-color: rgb(48, 0, 124);
+    color: white;
+   
+
+}
+p{
+    background-color: rgb(48, 0, 124);
+    color: white;
+}
+a{
+    color: white;
+    text-decoration: none;
+    background-color: rgb(48, 0, 124);
+    padding-left: 35px;
+}
+a:hover{
+color: gray;
+}
+.login{
+    background-color: rgb(48, 0, 124);
+}
+button{
+width: 320px;
+border-radius: 20px;
+height: 35px;
+color: black;
+font-weight: bold;
+}
+button:hover{
+    background-color: gray;
+}

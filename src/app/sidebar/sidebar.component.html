@@ -3,20 +3,20 @@
     <a routerLink="/home" class="home">
         <div class="rounded-icon">
             <i class="fas fa-home icon"></i>
-        </div>Inicio
+        </div>{{menu.menu}}
     </a>
-    <a routerLink="/cards"><i class="far fa-credit-card"></i>Tarjetas</a>
-    <a routerLink="/addLoan"><i class="fas fa-money-bill-wave"></i>Préstamos</a>
-    <a routerLink="/operations"><i class="fas fa-exchange-alt"></i>Operaciones</a>
+    <a routerLink="/cards"><i class="far fa-credit-card"></i>{{menu.cards}}</a>
+    <a routerLink="/addLoan"><i class="fas fa-money-bill-wave"></i>{{menu.loans}}</a>
+    <a routerLink="/operations"><i class="fas fa-exchange-alt"></i>{{menu.operations}}</a>
     <a href="#"><i class="fas fa-tag"></i>
-        Te ofrecemos</a>
+        {{menu.offers}}</a>
     <a href="#"><i class="fas fa-shield-alt"></i>
-        Seguros</a>
+        {{menu.insurance}}</a>
     <a href="#"><i class="fas fa-gift"></i>
-        Puntos</a>
+        {{menu.points}}</a>
     <a href="#"><i class="fas fa-question-circle"></i>
-        Ayuda</a>
-    <a href="#"><i class="fas fa-sign-out-alt"></i>Cerrar sesión</a>
+        {{menu.help}}</a>
+    <a href="#"><i class="fas fa-sign-out-alt"></i>{{menu.logout}}</a>
 </div>
 
 <div class="collapse" id="navbarToggleExternalContent">

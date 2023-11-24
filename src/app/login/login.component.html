@@ -1,37 +1,32 @@
-<div class="container-fluid">
-    <div class="row justify-content-center align-items-center" style="height: 100vh;">
-        <div class="col-5 bg-primary text-white">
-            <div class="text-center">
-                <h1>Bienvenidos a Unicomer</h1>
-            </div>
+<div class="d-flex" style="height: 100vh;">
+    <div class="col-7 welcome2">
+        <div class="text-center">
+            <h1 class="welcome"><span class="welcomeTo">Bienvenidos a</span><span class="unicomer"> Unicomer</span></h1>
         </div>
+    </div>
 
-        <div class="col-7 form-login">
-            <div class="card mt-5">
-                <div class="card-body">
-                    <h1 class="text-center">Inicio de sesión</h1>
-                    <form (ngSubmit)="onSubmit()">
-                        <div class="form-group">
-                            <label for="dni">Número de documento</label>
-                            <input type="text" class="form-control" id="dni" name="dni" placeholder="DNI"
-                                [(ngModel)]="dni">
-                            <!-- Agrega name="dni" aquí -->
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Contraseña</label>
-                            <input type="password" class="form-control" id="password" name="password"
-                                placeholder="*********" [(ngModel)]="password">
-                            <!-- Agrega name="password" aquí -->
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
-                    </form>
-
-
-                    <p class="text-center mt-3">¿No tienes cuenta? <br>
-                        <a routerLink="/register">Regístrate aquí</a>
-                    </p>
-
-                </div>
+    <div class="col-5 form-login fondo welcome2">
+        <div class="mt-5 login">
+            <div class="card-body">
+                <form (ngSubmit)="onSubmit()" class="customForm">
+                    <div class="form-group">
+                        <label for="dniType">Tipo de documento</label>
+                        <select class="form-control" id="dniType" name="dniType">
+                            <option *ngFor="let type of dniTypes">{{ type }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group custom-form-group">
+                        <label for="dni">Número de documento</label>
+                        <input type="text" class="form-control custom-input" id="dni" name="dni" placeholder="DNI" [(ngModel)]="dni">
+                    </div>
+                    <div class="form-group custom-form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" class="form-control custom-input" id="password" name="password"
+                            placeholder="*********" [(ngModel)]="password">
+                    </div>
+                    <button type="submit" class="btn-block">Ingresar</button>
+                </form>
+                <a class="text-center mt-3" routerLink="/register">¿No tienes cuenta? Regístrate aquí</a>
             </div>
         </div>
     </div>

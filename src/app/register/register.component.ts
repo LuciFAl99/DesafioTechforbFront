@@ -54,19 +54,19 @@ export class RegisterComponent {
               timer: 2000
             })
           }, (error: HttpErrorResponse) => {
-            console.error('Error en la transacción:', error);
+            console.error('Error en el registro:', error);
 
             if (error.status === 201 && error.statusText === 'OK') {
               Swal.fire({
                 icon: 'success',
-                text: 'Pago realizado con éxito',
+                text: 'Registro realizado con éxito',
                 showConfirmButton: false,
                 timer: 2000
               })
             } else {
               Swal.fire({
                 icon: 'error',
-                text: error.error.message || 'Ha ocurrido un error al pagar el préstamo',
+                text: error.error.message || 'Ha ocurrido un error al registrarse',
                 confirmButtonColor: '#7c601893'
               });
             }
