@@ -2,3 +2,10 @@
     display: flex;
     justify-content: center;
 }
+h2{
+    margin-left: 16%;
+}
+form{
+    width: 700px;
+    height: 600px;
+}
