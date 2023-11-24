@@ -51,7 +51,7 @@ export class OperationsComponent {
               showConfirmButton: false,
               timer: 2000
             }).then(() => {
-              this.fetchAndUpdateClientAndNavigate(); // Obtener y actualizar cliente + navegar
+              this.fetchAndUpdateClientAndNavigate(); 
             });
           }, (error: HttpErrorResponse) => {
             console.error('Error en la transacción:', error);

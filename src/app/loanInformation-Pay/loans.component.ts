@@ -41,7 +41,7 @@ export class LoansComponent implements OnInit {
     const params = new HttpParams()
       .set('idLoan', this.idLoan)
       .set('card', this.card)
-      .set('amount', this.amount.toString()); // Convertir a string si es necesario
+      .set('amount', this.amount.toString()); 
 
     const options = {
       params: params,
