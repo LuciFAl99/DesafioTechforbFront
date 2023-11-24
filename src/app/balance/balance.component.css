@@ -1,7 +1,7 @@
 .balance{
-    width: 790px;
+    width: 720px;
     height: 500px;
-    padding-left: 28%;
+    padding-left: 30%;
     border-radius: 10px;
 }
 @media only screen and (min-width:320px) and (max-width:768px){

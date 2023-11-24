@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { CookieService } from 'ngx-cookie-service';
 import { OperationsComponent } from './operations/operations.component';
 import { LoanComponent } from './addLoan/loan.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { LoanComponent } from './addLoan/loan.component';
     HomeComponent,
     OperationsComponent,
     LoanComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

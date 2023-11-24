@@ -8,6 +8,7 @@ export class Card {
     revenues?: number;
     expenditures?: number;
     creationDate?: Date;
+    thruDate?: Date;
     client?: Client;
     transactions?: Transaction[];
 }

@@ -10,5 +10,14 @@ import { NavigationEnd, Router } from '@angular/router';
 export class AppComponent{
   title = 'DesafioTechforb';
 
+  showSidebar: boolean = true;
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.router.events.subscribe(() => {
+      this.showSidebar = !this.router.url.includes('login'); 
+    });
+  }
 }
 

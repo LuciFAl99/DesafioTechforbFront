@@ -1,15 +1,59 @@
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 25px;
-  padding: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
   margin: 20px;
   width: 320px;
   height: 200px;
-  text-align: center;
   color: white;
   background-image: url(./img/card.png);
   background-position: -30px 0px;
   background-size: cover;
+}
+.sin-background{
+  background-color: transparent;
+}
+.ingresos{
+  gap: 50px;
+}
+.ingr{
+  color: rgb(52, 170, 52);
+  font-size: small;
+  font-weight: bold;
+}
+.egresos{
+  color: rgb(233, 80, 80);
+  font-size: small;
+  font-weight: bold;
+}
+.triangulo1{
+  background-color: transparent;
+  color: rgb(52, 170, 52);
+  display: flex;
+  justify-content: center;
+}
+.triangulo2{
+  background-color: transparent;
+  color: rgb(233, 80, 80);
+  display: flex;
+  justify-content: center;
+}
+.grande{
+  font-size: x-large;
+}
+.card-number{
+  text-align: right;
+  padding-right: 20px;
+  font-size: large;
+}
+.chico{
+  font-size: xx-small;
+  height: 10px;
+}
+.card-datos{
+  display: flex;
+  gap: 20px;
 }
 .card2{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -18,23 +62,28 @@
   margin: 20px;
   width: 320px;
   height: 200px;
-  text-align: center;
+  padding-left: 9%;
   color: white;
   background-image: url(./img/card2.png);
   background-size: cover;
+  color: black;
+}
+.revenues{
+  font-size: x-large;
 }
 .card3{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 25px;
   padding: 20px;
   margin: 20px;
+  padding-left: 9%;
   width: 320px;
   height: 200px;
-  text-align: center;
   color: white;
   background-image: url(./img/card3.png);
   background-position: 0px 3px;
   background-size: cover;
+  color: black;
 }
 .cards{
   display: flex;
@@ -53,6 +102,7 @@ input{
   width: 610px;
   height: 30px;
 }
+
 .buscador{
   display: flex;
   justify-content: center;
@@ -62,7 +112,7 @@ input{
 h2{
   color: black;
   display: flex;
-  padding-left: 19%;
+  padding-left: 11%;
   padding-top: 2%;
 }
 .circulo {

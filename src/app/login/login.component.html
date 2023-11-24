@@ -1,33 +1,35 @@
 <div class="container-fluid">
     <div class="row justify-content-center align-items-center" style="height: 100vh;">
-        <!-- División izquierda - Bienvenido a Unicomer -->
         <div class="col-5 bg-primary text-white">
             <div class="text-center">
                 <h1>Bienvenidos a Unicomer</h1>
             </div>
         </div>
 
-        <!-- División derecha - Formulario de Login -->
         <div class="col-7 form-login">
             <div class="card mt-5">
                 <div class="card-body">
                     <h1 class="text-center">Inicio de sesión</h1>
                     <form (ngSubmit)="onSubmit()">
                         <div class="form-group">
-                          <label for="dni">Número de documento</label>
-                          <input type="text" class="form-control" id="dni" name="dni" placeholder="DNI" [(ngModel)]="dni">
-                          <!-- Agrega name="dni" aquí -->
+                            <label for="dni">Número de documento</label>
+                            <input type="text" class="form-control" id="dni" name="dni" placeholder="DNI"
+                                [(ngModel)]="dni">
+                            <!-- Agrega name="dni" aquí -->
                         </div>
                         <div class="form-group">
-                          <label for="password">Contraseña</label>
-                          <input type="password" class="form-control" id="password" name="password" placeholder="*********" [(ngModel)]="password">
-                          <!-- Agrega name="password" aquí -->
+                            <label for="password">Contraseña</label>
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="*********" [(ngModel)]="password">
+                            <!-- Agrega name="password" aquí -->
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
-                      </form>
-                      
+                    </form>
 
-                    <p class="text-center mt-3">¿No tienes cuenta? <a href="#">Regístrate aquí</a></p>
+
+                    <p class="text-center mt-3">¿No tienes cuenta? <br>
+                        <a routerLink="/register">Regístrate aquí</a>
+                    </p>
 
                 </div>
             </div>
